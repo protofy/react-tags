@@ -2,6 +2,7 @@
 
 var React = require('react');
 var Tag = require('./Tag');
+var ContentTag = require('./ContentTag');
 var Suggestions = require('./Suggestions');
 var AutosizeInput = require('react-input-autosize');
 
@@ -18,6 +19,7 @@ module.exports = React.createClass({
     displayName: 'exports',
 
     propTypes: {
+        renderTagContent: React.PropTypes.func,
         busy: React.PropTypes.bool,
         tags: React.PropTypes.array,
         placeholder: React.PropTypes.string,
@@ -171,6 +173,17 @@ module.exports = React.createClass({
         var _this = this;
 
         var tagItems = this.props.tags.map(function (tag, i) {
+            if (typeof _this.props.renderTagContent === 'function') {
+                var tagContent = _this.props.renderTagContent(tag, i);
+                if (tagContent) {
+                    return React.createElement(ContentTag, {
+                        content: tagContent,
+                        key: i,
+                        tag: tag,
+                        onDelete: _this.handleDelete.bind(null, i),
+                        removeComponent: _this.props.removeComponent });
+                }
+            }
             return React.createElement(Tag, {
                 key: i,
                 tag: tag,

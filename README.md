@@ -1,13 +1,16 @@
+### React Tag Content
+
+This Fork of the [React Tag Autocomplete](https://github.com/i-like-robots/react-tags) project adds a new prop `renderTagContent` to the ReactTags component.
+This allows to render whatever you want inside the added tags. See the example for more information.
+
 ### React Tag Autocomplete
 
 React Tag Autocomplete is a simple tagging component ready to drop in your React projects. This is a fork of the [original React Tags project](http://prakhar.me/react-tags/example) by Prakhar Srivastav. This version cleans out a few options, removes the drag-and-drop re-ordering functionality and adds appropriate roles and ARIA states.
 
 ### Installation
 
-The preferred way of using the component is via NPM
-
 ```
-npm install --save react-tag-autocomplete
+npm install --save react-tag-content
 ```
 
 ### Usage
@@ -64,6 +67,7 @@ React.render(<App />, document.getElementById('app'));
 <a name="Options"></a>
 ### Options
 
+- [`renderTagContent`](#renderTagContent)
 - [`tags`](#tagsOption)
 - [`suggestions`](#suggestionsOption)
 - [`busy`](#suggestionsOption)
@@ -74,6 +78,14 @@ React.render(<App />, document.getElementById('app'));
 - [`handleAddition`](#handleAdditionOption)
 - [`handleDelete`](#handleDeleteOption)
 - [`handleInputChange`](#handleInputChange)
+
+<a name="renderTagContent"></a>
+#### renderTagContent (optional)
+A function that returns a react component to be rendered inside an added tag. the function gets called with tag and index.
+```js
+const renderTagContent = (tag, index) => <div>{`This is custom content of the tag ${tag.name}`}</div>
+```
+If you return null instead of a react component, the default tags are used (as if you hadn't supplied the prop)
 
 <a name="tagsOption"></a>
 #### tags (optional)
@@ -178,6 +190,9 @@ function(input) {
 - `ReactTags__busy`
 - `ReactTags__selected`
 - `ReactTags__tag`
+-- `ReactTags__tag_simple`
+-- `ReactTags__tag_content`
+-- `ReactTags__tag_content_close`
 - `ReactTags__remove`
 - `ReactTags__suggestions`
 

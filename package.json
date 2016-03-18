@@ -1,7 +1,7 @@
 {
-  "name": "react-tag-autocomplete",
-  "version": "3.3.1",
-  "description": "React Tag Autocomplete is a simple tagging component ready to drop in your React projects.",
+  "name": "react-tag-content",
+  "version": "0.0.1",
+  "description": "React Tag Recursive is a tagging component ready to drop in your React projects.",
   "main": "dist/ReactTags.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,10 +18,11 @@
   ],
   "contributors": [
     "Prakhar Srivastav",
-    "Matt Hinchliffe"
+    "Matt Hinchliffe",
+    "Ansgar Mertens"
   ],
   "license": "MIT",
-  "repository": "https://github.com/i-like-robots/react-tags",
+  "repository": "https://github.com/protofy/react-tags",
   "peerDependencies": {
     "react": "^0.14.0",
     "react-dom": "^0.14.0"
