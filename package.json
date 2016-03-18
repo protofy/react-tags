@@ -1,7 +1,7 @@
 {
   "name": "react-tag-content",
   "version": "0.0.1",
-  "description": "React Tag Recursive is a tagging component ready to drop in your React projects.",
+  "description": "React Tag Content is a tagging component ready to drop in your React projects.",
   "main": "dist/ReactTags.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
