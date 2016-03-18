@@ -51,6 +51,14 @@ const App = React.createClass({
         const tags = this.state.tags;
         const suggestions = this.state.suggestions;
 
+        const renderTagContent = (tag, index) =>
+            index % 2 === 0 ?
+            <div>
+                <h2>{tag.name}</h2>
+                {`Custorm Tag Content at index: ${index}`}
+            </div> :
+            null; //an uneven index renders the default tag
+
         return (
             <div>
                 <Tags
@@ -58,7 +66,9 @@ const App = React.createClass({
                     suggestions={suggestions}
                     busy={this.state.busy}
                     handleDelete={this.handleDelete}
-                    handleAddition={this.handleAddition} />
+                    handleAddition={this.handleAddition}
+                    renderTagContent={renderTagContent}>
+                </Tags>
                 <br />
                 <label>
                   <input type="checkbox" ref="busy" onClick={this.handleToggle} />

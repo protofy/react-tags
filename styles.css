@@ -21,6 +21,7 @@
     padding: 0;
     border: 0;
     outline: none;
+    background-color: transparent;
     font: inherit;
 }
 
@@ -55,6 +56,7 @@
 }
 
 .ReactTags__tag {
+    position: relative;
     display: inline-block;
     box-sizing: border-box;
     height: 34px;
@@ -68,10 +70,23 @@
     vertical-align: bottom;
 }
 
-.ReactTags__tag:after {
+.ReactTags__tag_simple:after {
     content: '\2715';
     color: #AAA;
     margin-left: 6px;
+}
+
+.ReactTags__tag_content {
+    padding: 16px;
+    height: auto;
+}
+
+.ReactTags__tag_content_close {
+    color: #AAA;
+    top: 0;
+    right: 0;
+    padding: 4px;
+    position: absolute;
 }
 
 /* Styles for suggestions */
