@@ -62,6 +62,7 @@ const App = React.createClass({
         return (
             <div>
                 <Tags
+                    allowBackspaceRemoving
                     tags={tags}
                     suggestions={suggestions}
                     busy={this.state.busy}
