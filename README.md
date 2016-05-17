@@ -78,6 +78,7 @@ React.render(<App />, document.getElementById('app'));
 - [`handleAddition`](#handleAdditionOption)
 - [`handleDelete`](#handleDeleteOption)
 - [`handleInputChange`](#handleInputChange)
+- [`allowBackspaceRemoving`]
 
 <a name="renderTagContent"></a>
 #### renderTagContent (optional)
