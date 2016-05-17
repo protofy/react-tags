@@ -28,6 +28,7 @@ module.exports = React.createClass({
         autofocus: React.PropTypes.bool,
         handleDelete: React.PropTypes.func.isRequired,
         handleAddition: React.PropTypes.func.isRequired,
+        allowBackspaceRemoving: React.PropTypes.bool,
         handleInputChange: React.PropTypes.func,
         minQueryLength: React.PropTypes.number
     },
@@ -118,7 +119,7 @@ module.exports = React.createClass({
         }
 
         // when backspace key is pressed and query is blank, delete tag
-        if (e.keyCode === Keys.BACKSPACE && query.length === 0) {
+        if (e.keyCode === Keys.BACKSPACE && query.length === 0 && this.props.allowBackspaceRemoving) {
             this.handleDelete(this.props.tags.length - 1);
         }
 

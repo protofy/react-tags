@@ -1,12 +1,13 @@
 {
   "name": "react-tag-content",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React Tag Content is a tagging component ready to drop in your React projects.",
   "main": "dist/ReactTags.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --colors --port 8090",
-    "build": "webpack -p && ./node_modules/.bin/babel ./lib --out-dir dist"
+    "build": "webpack -p && ./node_modules/.bin/babel ./lib --out-dir dist",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "react",
